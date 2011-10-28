@@ -48,7 +48,7 @@ $ export DATA_GOOGLE=analytics,UA-XXXXXXXX-X
 
 ## Create Heroku App
 
-`heroku create`
+`heroku create --stack cedar`
 
 Add redis for caching
 
