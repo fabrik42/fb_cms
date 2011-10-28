@@ -6,7 +6,7 @@
 = haml(:_single_event, :layout => false, :locals => { :event => event, :standalone => true })
 
 - if event.attending.any?
-  %h2 Die Leut hier ham schon zugesagt
+  %h2 People attending
   %ul#attendees.clearfix
     - event.attending.each do |attendee|
       %li
