@@ -1,0 +1,29 @@
+!!! XML
+%urlset{ :xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9" }
+
+  %url
+    %loc= "#{settings.site_url}"
+    %lastmod= file_mtime("index.haml").xmlschema
+    %changefreq weekly
+    %priority= 0.8
+
+  - %w[ events albums about ].each do |site|
+    %url
+      %loc= "#{settings.site_url}/#{site}"
+      %lastmod= file_mtime("#{site}.haml").xmlschema
+      %changefreq weekly
+      %priority= 0.6
+
+  - Facebook::Event.all.each do |event|
+    %url
+      %loc= "#{settings.site_url}/#{event.path}"
+      %lastmod= event.upated_at.xmlschema
+      %changefreq daily
+      %priority= 0.8
+
+  - Facebook::Album.all.each do |album|
+    %url
+      %loc= "#{settings.site_url}/#{album.path}"
+      %lastmod= album.upated_at.xmlschema
+      %changefreq monthly
+      %priority= 0.4

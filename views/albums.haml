@@ -1,0 +1,14 @@
+- @meta_title = "Pictures"
+- @meta_description = "Albums of your facebook Page."
+
+%h1= @meta_title
+
+%ul#images{ :data => { :collection => "albums" } }
+  - albums.each do |album|
+    %li
+      %a.img_wrap{ :href => url(album.path), :title => album.description }
+        %div.cover{ :style => "background-image: url(#{album.cover})" }
+      %a.title{ :href => url(album.path), :title => album.description }
+        = album.name
+
+

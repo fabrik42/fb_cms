@@ -1,0 +1,39 @@
+#images {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#images li {
+  width: 190px;
+  float: left;
+  margin: 10px;
+}
+
+#images a.img_wrap {
+  display: block;
+  width: 180px;
+  padding: 4px;
+  background: $white;
+  border: 1px solid $light_grey;
+}
+
+#images a.img_wrap:hover {
+  border: 1px solid $highlight_grey;
+}
+
+#images a.title {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 18px;  
+  margin: 5px;
+}
+
+.cover {
+  width: 180px;
+  height: 120px;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+}

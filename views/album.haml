@@ -1,0 +1,12 @@
+- @meta_title = album.name
+- @meta_description = album.description
+
+%h1= @meta_title
+
+%ul#images{ :data => { :collection => "photos" } }
+  - album.photos.each do |photo|
+    %li
+      %a.img_wrap{ :href => photo.url, :rel => "photo", :title => photo.name }
+        %div.cover{ :style => "background-image: url(#{photo.thumb})" }
+
+

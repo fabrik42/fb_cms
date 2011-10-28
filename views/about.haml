@@ -1,0 +1,8 @@
+- @meta_title =  "About"
+- @meta_description =  page.mission
+
+%h1= @meta_title
+
+%h2.centered= nl2br(page.mission)
+
+= simple_format(page.description, :class => "description")

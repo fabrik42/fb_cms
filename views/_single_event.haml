@@ -1,0 +1,25 @@
+- tag = locals[:standalone] ? "div" : "li"
+- haml_tag("#{tag}.single_event", { :itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Event" }) do
+  .col_l
+    .cal
+      .cal_month= I18n.l(event.start, :format => "%b")
+      .cal_day= I18n.l(event.start, :format => "%d")
+  .col_r
+    - unless locals[:standalone]
+      %h2
+        %a{ :href => url(event.path), :itemprop => "url" }
+          %span{ :itemprop => "summary" }= event.name
+    %p.location{ :itemprop => "address", :itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Address" }
+      %strong
+        = event.address["location"]
+      = "("
+      %span.street{ :itemprop => "street-address" }>= event.address["street"]
+      = ",&nbsp;" if event.address["street"]
+      %span.city{ :itemprop => "locality" }>= event.address["city"]\
+      = ")"
+      %span.region{ :itemprop => "region" }= event.address["state"]
+      %span.country{ :itemprop => "country-name" }= event.address["country"]
+    %time{ :itemprop => "startDate", :datetime => event.start.iso8601 }
+      = event.date
+    %p{ :itemprop => "description" }
+      = nl2br(event.description)

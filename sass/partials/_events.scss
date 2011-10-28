@@ -1,0 +1,84 @@
+#events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.single_event {
+  background: $white;
+  color: $dark_grey;
+  margin: 10px;
+  padding: 20px;
+  @include border-radius(10px);
+  @include clearfix;
+}
+
+.single_event h2 {
+  margin: 0 0 10px 0;
+  line-height: 1em;
+  font-size: 200%;
+}
+
+.single_event h2 a {
+  @include link-colors($dark_grey, $light_grey, $dark_grey, $dark_grey, $light_grey)
+}
+
+.col_l {
+  float: left;
+  width: 80px;
+}
+
+.col_r {
+  float: left;
+  width: 500px;
+}
+
+.cal_month {
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
+
+  width: 60px;
+  background: $red;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 3px 0 1px;
+}
+
+.cal_day {
+  @include border-bottom-left-radius(5px);
+  @include border-bottom-right-radius(5px);
+
+  width: 60px;
+  background: #fff;
+  color: $dark_grey;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+p.location {
+  margin: 0 0 10px;
+}
+
+span.region, span.country {
+  display: none;
+}
+
+time {
+  margin: 0 0 10px;
+}
+
+#attendees {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#attendees li {
+  float: left;
+  margin: 0;
+}

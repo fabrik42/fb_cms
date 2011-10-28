@@ -1,0 +1,10 @@
+- @meta_title = "Events"
+- @meta_description = "Events of your facebook page."
+
+%h1= @meta_title
+
+%p= @meta_description
+
+%ol#events
+  - events.each do |event|
+    = haml(:_single_event, :layout => false, :locals => { :event => event })
