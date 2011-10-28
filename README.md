@@ -1,6 +1,16 @@
 # How to get started
 
-## P
+## On Facebook
+
+* Get a developer account
+
+* Create a facebook page
+
+* Create an app (to get the page information via the graph api)
+
+## Install Dependencies
+
+`$ bundle install`
 
 ## Setting Environment Variables
 
@@ -17,7 +27,7 @@ Example for setting the environment variables on your local dev machine:
 __Facebook__
 
 ```
-export DATA_FACEBOOK=page_id,YOUR_PAGE_ID,app_id,YOUR_APP_ID,app_secret,YOUR_APP_SECRET,fb_page_path,YOUR_PAGE_URL,admin_id,YOUR_FB_USER_ID
+$ export DATA_FACEBOOK=page_id,YOUR_PAGE_ID,app_id,YOUR_APP_ID,app_secret,YOUR_APP_SECRET,fb_page_path,YOUR_PAGE_URL,admin_id,YOUR_FB_USER_ID
 ```
 
 * `YOUR_PAGE_ID`- The id of the fb page you want to use
@@ -33,5 +43,24 @@ export DATA_FACEBOOK=page_id,YOUR_PAGE_ID,app_id,YOUR_APP_ID,app_secret,YOUR_APP
 __Google__
 
 ```
-export DATA_GOOGLE=analytics,UA-XXXXXXXX-X
+$ export DATA_GOOGLE=analytics,UA-XXXXXXXX-X
 ```
+
+## Create Heroku App
+
+`heroku create`
+
+Add redis for caching
+
+`heroku addons:add redistogo:nano`
+
+Add the environment variables to the heroku config (see above)
+
+`heroku config:add DATA_FACEBOOK=YOUR_DATA`
+`heroku config:add DATA_GOOGLE=YOUR_DATA`
+
+Now push the app to heroku!
+
+`git push heroku master`
+
+Manage your Events, Images and About page via facebook and have fun! :)
