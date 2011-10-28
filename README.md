@@ -1,3 +1,26 @@
+# What is this?
+
+This is just a simple example app that shows how to use the facebook graph api to retrieve content from a facebook page and its connected resources.
+
+The app is powered by __Sinatra__ and is built to run on __Heroku__. The views are based on __HTML5 Boilerplate__ and written in __HAML__ and __SASS__. Facebook's Graph API is queried using the __Koala__ gem and responses are cached by __Redis__.
+
+## Out of the box this apps supports
+
+* Showing news, events, pictures and an about page of the facebook page.
+
+* Semantic and search engine friendly representation of the data.
+
+* Support for Google Analytics and sitemaps.
+
+* Support for Open Graph tags.
+
+* Built-in caching for fast responses.
+
+* I18n support.
+
+_Note:_
+This is more or less just a proof of concept. It won't handle every use case perfectly. But it's also easy to extend and a good place to start. :)
+
 # How to get started
 
 ## On Facebook
